@@ -1,0 +1,160 @@
+\PassOptionsToPackage{x11names}{xcolor}
+\documentclass[10pt]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+
+% Change the bar colors:
+%\setbeamercolor{Feather}{fg=red!20,bg=red}
+
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
+
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+%\usepackage{fourier, heuristica}
+%\usepackage{tgadventor}
+\usepackage{array,booktabs}
+\usepackage{graphicx}
+\usepackage{colortbl,xcolor}
+\usepackage{caption}
+\usepackage{amsmath,mathrsfs}
+\usepackage{verbatim}
+\usepackage{stackrel,stackengine}
+\usepackage{ragged2e}
+\usepackage{pgf,tikz}
+\usepackage{multimedia}
+\usepackage{media9}
+\usepackage{listings}  % Agrega color al código de un lenguaje de programación
+%------------------------------------------------------
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{fontspec}
+\setmainfont{AncizarSans-Regular.otf} 
+\usepackage[ruled,vlined,lined,linesnumbered,algosection,english]{algorithm2e} %
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+\DeclareCaptionFont{blue}{\color{black}}
+\newcommand{\foo}{\color{red}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1.3pt\hspace{\labelsep}}
+
+%--------------------------------------------------------
+\renewcommand\useanchorwidth{T}
+\def\theyearwidth{1.5pt}
+\newlength\yrsfboxrule
+\yrsfboxrule .4\fboxrule
+\newcommand\yearwidth[1]{\def\theyearwidth{#1}\ignorespaces}
+\newcommand\skipyears[2][white]{%
+  \fboxrule\yrsfboxrule%
+  \fboxsep=-\yrsfboxrule%
+  \fcolorbox{gray}{#1}{\strut\hspace{#2}}%
+  \ignorespaces%
+}
+\newcommand\showyear[2][black]{%
+  \fboxsep=0pt%
+  \stackon{%
+    \colorbox{#1}{\strut\hspace{\theyearwidth}}%
+  }{\sffamily\small#2}%
+  \ignorespaces%
+}
+
+%-----------------------------------------------------------
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{Modelo de direccionamiento IPv6 para redes Ad-hoc basadas en comunicaciones tipo máquina a máquina}
+}
+
+\subtitle[Grupo de Investigación en Redes de Telecomunicaciones Dinámicas \& Lenguajes de Programación Distribuidos]
+{
+      %\textbf{Avance 4 - Implementación y simulación}
+}
+
+\author[Grupo TLÖN]
+{      
+    Giuseppe Roa Osorio \\
+    {\ttfamily groao@unal.edu.co}
+}
+
+\institute[]
+{
+    \large{Universidad Nacional de Colombia}\\
+    \small{Sede Bogotá - Facultad de Ingeniería\\
+    Departamento de Ingeniería de Sistemas e Industrial}
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{\today}
+%\date{Agosto 20, 2016}
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+
+\setbeamertemplate{caption}[numbered] % Enable tables/figures numbering
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+%-------------------------------------------------------
+
+\begin{frame}{Agenda}{}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+
+	\input{Sections/Section1.tex}
+	\input{Sections/Section2.tex}
+	\input{Sections/Section3.tex}
+	\input{Sections/Section4.tex}
+	\input{Sections/Section5.tex}
+
+%-------------------------------------------------------
+
+\section{Referencias}
+\begin{frame}[allowframebreaks]{Referencias} %in case more than 1 slide needed
+	
+    {\footnotesize
+    \bibliographystyle{apalike}
+    \bibliography{Reference/IEEE.bib}
+    }
+\end{frame}
+
+%-----------------------------------------------------
+
+{\4
+\begin{frame}[plain,noframenumbering]
+    \textbf{\large{\finalpage{\color{white} Gracias por su atención.\\  ¿Preguntas?}}}
+\end{frame}}
+
+%-----------------------------------------------------
+\end{document}
