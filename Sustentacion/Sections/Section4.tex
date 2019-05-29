@@ -8,7 +8,7 @@
     \begin{enumerate}
     \justifying
         \item \textbf{Uso uniforme} del espacio de direccionamiento \textbf{(UU)}.\\ 
-        \item \textbf{Latencia (LA)}: Delay requerido para la asignación dinámica (setup initial y corrección de duplicidades) \cite{DATMANET}.\\
+        \item \textbf{Latencia (LA)}: Retardo requerido para la asignación dinámica (setup initial y corrección de duplicidades) \cite{DATMANET}.\\
         {\tt t Latencia promedio por l -saltos\\
         d Diámetro de la red.}\\
         \item \textbf{Overhead (OV)}: Bytes requeridos para establecer el direccionamiento \cite{EvalSelf}\\
@@ -77,19 +77,24 @@ RUNS &= 3^{(6-1)} = 243 => fractional_{n!} = \frac{1}{3^{1}}
 \begin{frame}{Escenarios de Simulación}{Validación del protocolo}
 %-------------------------------------------------------
 	\centering
-	\includemedia[
+	\begin{figure}
+	%\includemedia[
 	    %label=myVidPlayer,
         %width=10cm,height=10cm,
         %activate=pageopen,
-        addresource=Figures/Avance.mp4,
-        flashvars={
-        source=Figures/Avance.mp4
-        &autoPlay=true
-        &loop=true
+    %    addresource=Figures/Avance.mp4,
+    %    flashvars={
+    %    source=Figures/Avance.mp4
+    %    &autoPlay=true
+    %    &loop=true
         %&scaleMode=letterbox
-        },
-        passcontext
-    ]{\includegraphics[width=0.8\textwidth,height=0.75\textheight,keepaspectratio]{Figures/Sim.JPG}}{VPlayer9.swf}
+    %    },
+    %    passcontext
+    %]{\includegraphics[width=0.8\textwidth,height=0.75\textheight,keepaspectratio]{Figures/Sim.JPG}}{VPlayer9.swf}
+    {\includegraphics[height=0.75\textheight,keepaspectratio]{Figures/Sim.JPG}}
+    \caption{\small \sl Ejemplo Simulación}
+	\label{figure:EjemploSim}
+	\end{figure}
 %-------------------------------------------------------
 \end{frame}
 %-------------------------------------------------------
